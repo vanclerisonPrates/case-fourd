@@ -3,7 +3,24 @@
 @tailwind utilities;
 
 * {
-  color: #5D606B
+  color: #5D606B;
+  font-size: 13px;
+  
+}
+
+li {
+  color: #8E94A7;
+  font-size: 14px;
+
+}
+
+li:hover, li:active{
+  color:#0346F2;
+  font-weight: 500;
+}
+
+a:active, a:hover, a:focus {
+  color: #0346F2;
 }
 
 body {
@@ -27,5 +44,8 @@ aside {
 
 button {
   background-color: #0346F2;
-  color: white
+  color: white;
+  border-radius: 0.75em;
+  padding: 0.5em;
+  height: 3rem;
 }

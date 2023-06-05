@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
-import { Classes } from "../utils/types";
+import { ClassTodayProps } from "../utils/types";
 
-export const useFetchClasses = () => {
-  const [classes, setClasses] = useState<Classes[]>();
+export const useFetchTodayClasses = () => {
+  const [todayClasses, setTodayClasses] = useState<ClassTodayProps>();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    fetch("/my-classes")
+    fetch("/schedules/today")
       .then((res) => res.json())
-      .then((json) => setClasses(json))
+      .then((json) => setTodayClasses(json))
       .catch((err) => setError(err));
     setLoading(false);
   }, []);
 
   return {
-    classes,
+    todayClasses,
     loading,
     error,
   };

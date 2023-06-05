@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
-import { Classes } from "../utils/types";
+import { CustomerType } from "../utils/types";
 
-export const useFetchClasses = () => {
-  const [classes, setClasses] = useState<Classes[]>();
+export const useFetchCustomer = () => {
+  const [customer, setCustomer] = useState<CustomerType>();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    fetch("/my-classes")
+    fetch("/customer")
       .then((res) => res.json())
-      .then((json) => setClasses(json))
+      .then((json) => setCustomer(json))
       .catch((err) => setError(err));
     setLoading(false);
   }, []);
 
   return {
-    classes,
+    customer,
     loading,
     error,
   };
