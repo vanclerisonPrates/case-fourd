@@ -14,7 +14,7 @@ function App() {
   const { classes } = useFetchClasses();
   const { todayClasses } = useFetchTodayClasses();
   const { customer } = useFetchCustomer();
-  console.log("test");
+
   return (
     <div className="flex flex-col gap-9 sm:gap-12">
       <NavBar customer={customer} />
