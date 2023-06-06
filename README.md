@@ -12,7 +12,7 @@ The url to pull image: [VANCLERISON/CASE-FOURD](https://hub.docker.com/r/vancler
 
 In the project directory, you can run:
 
-### `yarn dev` & ### `yarn prod`
+### `yarn dev` & `yarn prod`
 
 For usage with mocked values set by mirage we need use DEV 
 For usage with real data of Case Api we need use PROD
@@ -26,7 +26,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn build:prod` & ### `yarn build:dev`
+### `yarn build:prod` &  `yarn build:dev`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
