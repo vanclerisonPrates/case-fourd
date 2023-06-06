@@ -5,7 +5,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { makeServer } from "./server";
 
-console.log(process.env);
 if (process.env.REACT_APP_NODE_ENV === "development") {
   makeServer({ environment: "development" });
 }

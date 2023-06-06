@@ -1,7 +1,7 @@
 import moment from "moment";
 
-import { default as CheckIcon } from "../assets/svg/done.svg";
-import { default as Eye } from "../assets/svg/closed-eye.svg";
+import CheckIcon from "../assets/svg/done.svg";
+import Eye from "../assets/svg/closed-eye.svg";
 
 import { Classes } from "../utils/types";
 

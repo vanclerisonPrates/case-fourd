@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import { default as Arrow } from "../assets/svg/arrow.svg";
-import { default as Location } from "../assets/svg/location.svg";
-import { default as DefaultCustomer } from "../assets/svg/user.png";
+import Arrow from "../assets/svg/arrow.svg";
+import Location from "../assets/svg/location.svg";
+import DefaultCustomer from "../assets/svg/user.png";
 
 import { CustomerType } from "../utils/types";
 
@@ -78,7 +78,8 @@ const Customer = ({ fullCustomer, customer }: CustomerProps) => {
             <img src={Arrow} alt="arrow" />
           </button>
         </div>
-        {showProfile && (
+
+        {customer && showProfile && (
           <div className="sm:hidden gap-2 absolute flex top-14 right-2 w-[180px] bg-white rounded ">
             <div className="flex items-center gap-2">
               <p className="font-medium">{customer?.name}</p>

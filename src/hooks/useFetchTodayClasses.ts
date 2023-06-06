@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
+
 import { ClassTodayProps } from "../utils/types";
+
+import { endpoints } from "./endpoints";
 
 export const useFetchTodayClasses = () => {
   const [todayClasses, setTodayClasses] = useState<ClassTodayProps>();
@@ -8,9 +11,7 @@ export const useFetchTodayClasses = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(
-      "https://iyt9skw6fe.execute-api.us-east-1.amazonaws.com/schedules/today"
-    )
+    fetch(endpoints.fetchTodayClasses)
       .then((res) => res.json())
       .then((json) => setTodayClasses(json))
       .catch((err) => setError(err));

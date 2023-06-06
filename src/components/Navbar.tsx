@@ -1,7 +1,7 @@
 import Customer from "./Customer";
 
-import { default as Notification } from "../assets/svg/notification.png";
-import { default as Logo } from "../assets/svg/logo.svg";
+import Notification from "../assets/svg/notification.png";
+import Logo from "../assets/svg/logo.svg";
 
 import { CustomerType } from "../utils/types";
 
@@ -12,12 +12,15 @@ interface NavProps {
 const Navbar = ({ customer }: NavProps) => {
   return (
     <nav className="rounded-2xl bg-white flex justify-between shadow-sm p-8 items-center">
-      <div className="flex items-center lg:border-r-2 lg:pr-8 mr-10 lg:spr-10 gap-4 lg:min-w-[120px]">
+      <a
+        href="/"
+        className="flex items-center lg:border-r-2 lg:pr-8 mr-10 lg:spr-10 gap-4 lg:min-w-[120px]"
+      >
         <img src={Logo} alt="logo" />
         <span className="lg:text-[16px] font-semibold text-[#1A1E2C]">
           WebSite Name
         </span>
-      </div>
+      </a>
       <ul className="hidden lg:flex sm:gap-12 group">
         <li>
           <a href="#dashboard">DashBoard</a>

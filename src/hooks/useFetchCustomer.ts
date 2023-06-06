@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { CustomerType } from "../utils/types";
+import { endpoints } from "./endpoints";
 
 export const useFetchCustomer = () => {
   const [customer, setCustomer] = useState<CustomerType>();
@@ -8,7 +9,7 @@ export const useFetchCustomer = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("/customer")
+    fetch(endpoints.fetchCustomer)
       .then((res) => res.json())
       .then((json) => setCustomer(json))
       .catch((err) => setError(err));

@@ -20,7 +20,7 @@ function App() {
       <NavBar customer={customer} />
       <div className="flex flex-col gap-3 sm:grid-cols-[1fr,300px] sm:grid sm:gap-3 sm:grid-flow-col ">
         <div className="hidden sm:flex sm:flex-col gap-16">
-          <Banner customer={customer} startAt={todayClasses?.[0].time} />
+          <Banner customer={customer} />
           <Main data={classes ?? []} />
         </div>
         <div className="hidden sm:flex sm:flex-col gap-4">

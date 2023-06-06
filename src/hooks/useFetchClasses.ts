@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Classes } from "../utils/types";
+import { endpoints } from "./endpoints";
 
 export const useFetchClasses = () => {
   const [classes, setClasses] = useState<Classes[]>();
@@ -8,7 +9,7 @@ export const useFetchClasses = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://iyt9skw6fe.execute-api.us-east-1.amazonaws.com/my-classes")
+    fetch(endpoints.fetchClasses)
       .then((res) => res.json())
       .then((json) => setClasses(json))
       .catch((err) => setError(err));
