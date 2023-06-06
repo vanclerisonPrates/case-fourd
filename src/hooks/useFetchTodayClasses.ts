@@ -8,7 +8,9 @@ export const useFetchTodayClasses = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("/schedules/today")
+    fetch(
+      "https://iyt9skw6fe.execute-api.us-east-1.amazonaws.com/schedules/today"
+    )
       .then((res) => res.json())
       .then((json) => setTodayClasses(json))
       .catch((err) => setError(err));

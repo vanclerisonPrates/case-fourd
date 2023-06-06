@@ -8,7 +8,7 @@ export const useFetchClasses = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("/my-classes")
+    fetch("https://iyt9skw6fe.execute-api.us-east-1.amazonaws.com/my-classes")
       .then((res) => res.json())
       .then((json) => setClasses(json))
       .catch((err) => setError(err));

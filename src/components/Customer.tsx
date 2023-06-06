@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { default as Arrow } from "../assets/svg/arrow.svg";
 import { default as Location } from "../assets/svg/location.svg";
+import { default as DefaultCustomer } from "../assets/svg/user.png";
 
 import { CustomerType } from "../utils/types";
 
@@ -18,24 +19,26 @@ const Customer = ({ fullCustomer, customer }: CustomerProps) => {
       <div className="rounded-full border-2 border-white min-w-[4px] min-h-[4px] p-[4px] absolute bg-[#00D455] top-0 left-12 z-1" />
       <div className="rounded-full">
         <img
-          src={customer?.photoUrl}
+          src={customer?.photoUrl || DefaultCustomer}
           alt={customer?.name}
           width={48}
           height={48}
           className="rounded-full border-2 border-white"
         />
       </div>
-      <div className="hidden sm:flex flex-col gap-2">
-        <div className="flex items-center gap-2">
-          <p className="font-medium text-[#1A1E2C]">{customer?.name}</p>{" "}
+      {customer && (
+        <div className="hidden sm:flex flex-col gap-2">
+          <div className="flex items-center gap-2">
+            <p className="font-medium text-[#1A1E2C]">{customer?.name}</p>{" "}
+          </div>
+          <div className="flex gap-2">
+            <img src={Location} alt="location" />
+            <span className="text-[#313131]">
+              {customer?.city}, {customer?.state}
+            </span>
+          </div>
         </div>
-        <div className="flex gap-2">
-          <img src={Location} alt="location" />
-          <span className="text-[#313131]">
-            {customer?.city}, {customer?.state}
-          </span>
-        </div>
-      </div>
+      )}
     </div>
   );
 
@@ -45,26 +48,28 @@ const Customer = ({ fullCustomer, customer }: CustomerProps) => {
         <div className="flex gap-2 items-center relative">
           <div className="rounded-full">
             <img
-              src={customer?.photoUrl}
+              src={customer?.photoUrl || DefaultCustomer}
               alt={customer?.name}
               width={48}
               height={48}
               className="rounded-full border-2 border-white"
             />
           </div>
-          <div className="hidden sm:flex flex-col gap-2">
-            <div className="flex items-center gap-2">
-              <p className="font-medium text-[#1A1E2C]">{customer?.name}</p>{" "}
-            </div>
-            {showProfile && (
-              <div className="flex gap-2">
-                <img src={Location} alt="location" />
-                <span>
-                  {customer?.city}, {customer?.state}
-                </span>
+          {customer && (
+            <div className="hidden sm:flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <p className="font-medium text-[#1A1E2C]">{customer?.name}</p>{" "}
               </div>
-            )}
-          </div>
+              {showProfile && (
+                <div className="flex gap-2">
+                  <img src={Location} alt="location" />
+                  <span>
+                    {customer?.city}, {customer?.state}
+                  </span>
+                </div>
+              )}
+            </div>
+          )}
           <button
             className="bg-transparent"
             onClick={() => setShowProfile(!showProfile)}

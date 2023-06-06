@@ -1,4 +1,3 @@
-import moment from "moment";
 import { ClassTodayProps } from "../utils/types";
 
 interface Props {
@@ -6,6 +5,9 @@ interface Props {
 }
 
 const Aside = ({ data }: Props) => {
+  const today = [data[0], data[1]];
+  const tomorrow = [data[2], data[3]];
+
   return (
     <aside
       id="minha-agenda"
@@ -16,28 +18,24 @@ const Aside = ({ data }: Props) => {
       </h5>
       <div className="flex flex-col mt-4 mb-4">
         <h6 className="text-[16px] font-bold text-[#1A1E2C] mb-4">Hoje</h6>
-        {data?.map((todayClass, index) => (
+        {today?.map((todayClass, index) => (
           <div key={index} className="flex gap-2 items-center mb-8 leading-5">
             <span className="font-bold text-[#1A1E2C] mr-2 min-w-[35px]">
-              {moment(todayClass.time)
-                .format("LT")
-                .replace(/([AaPp][Mm])/gm, "")}
+              {todayClass?.time}
             </span>
             <div className="flex border-l-2 pl-2 border-[#04C3FF] min-h-[36px] max-h-[36px] items-center">
-              <span>{todayClass.title}</span>
+              <span>{todayClass?.title}</span>
             </div>
           </div>
         ))}
         <h6 className="text-[16px] font-bold text-[#1A1E2C] mb-4">Amanhã</h6>
-        {data?.map((todayClass, index) => (
+        {tomorrow?.map((todayClass, index) => (
           <div key={index} className="flex gap-2 items-center mb-8 leading-5">
             <span className="font-bold text-[#1A1E2C] mr-2 min-w-[35px]">
-              {moment(todayClass.time)
-                .format("LT")
-                .replace(/([AaPp][Mm])/gm, "")}
+              {todayClass?.time}
             </span>
             <div className="flex border-l-2 pl-2 border-[#04C3FF] min-h-[36px] max-h-[36px] items-center">
-              <span>{todayClass.title}</span>
+              <span>{todayClass?.title}</span>
             </div>
           </div>
         ))}

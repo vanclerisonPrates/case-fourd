@@ -8,8 +8,6 @@ import { useFetchClasses } from "./hooks/useFetchClasses";
 import { useFetchTodayClasses } from "./hooks/useFetchTodayClasses";
 import { useFetchCustomer } from "./hooks/useFetchCustomer";
 
-import "./server";
-
 import "./index.css";
 
 function App() {

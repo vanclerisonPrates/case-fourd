@@ -5,7 +5,7 @@ import { default as Eye } from "../assets/svg/closed-eye.svg";
 
 import { Classes } from "../utils/types";
 
-const ClassRow = ({ date, view, title, category }: Omit<Classes, "id">) => {
+const ClassRow = ({ date, views, title, category }: Omit<Classes, "id">) => {
   return (
     <td className="flex flex-col sm:flex-row sm:items-center sm:gap-28 gap-4">
       <div className="flex order-last sm:order-first sm:justify-between items-center w-full">
@@ -19,7 +19,7 @@ const ClassRow = ({ date, view, title, category }: Omit<Classes, "id">) => {
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <img src={Eye} alt="eye-svg" /> <span>{view}</span>
+            <img src={Eye} alt="eye-svg" /> <span>{views}</span>
           </div>
           <div className="sm:hidden sm:block bg-[#0346F2] rounded-full p-2 text-white mt-2 text-center">
             {category}

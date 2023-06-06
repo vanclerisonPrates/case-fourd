@@ -15,6 +15,6 @@ export type Classes = {
   id: string;
   title: string;
   date: number | string;
-  view: number;
+  views: number;
   category: string;
 };
