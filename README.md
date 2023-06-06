@@ -12,7 +12,13 @@ The url to pull image: [VANCLERISON/CASE-FOURD](https://hub.docker.com/r/vancler
 
 In the project directory, you can run:
 
-### `yarn start`
+### `yarn dev` & ### `yarn prod`
+
+For usage with mocked values set by mirage we need use DEV 
+For usage with real data of Case Api we need use PROD
+
+The enviroment is using .ENV files .env.development & .env.production this files are necessary to compile the application looking for correct enviroment.
+  -whitout this files the application will ever start with mirage database.
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
