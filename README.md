@@ -1,6 +1,9 @@
 # Case Fourd With React, TypeScript, Tailwind, CSS & Mirage 
 
-This project was created using two simple API request to populate two containers. But the idea of mirage were developed and with this using the scripts: 
+This project was created using two simple API request to populate two containers. 
+
+For mirage usage need run the following script: 
+
 ### `yarn dev` we can see the application working with all sections.
 
 Also but no less important. This Application were published at DockerHub.
